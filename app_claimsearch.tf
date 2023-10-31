@@ -1,6 +1,6 @@
 resource "okta_app_saml" "ClaimSearch" {
   assertion_signed               = "false"
-  audience                       = "PasswordVault"
+  audience                       = "https://www.okta.com/saml2/service-provider/spdwywvodpicspjwyqqn"
   authn_context_class_ref        = "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
   auto_submit_toolbar            = "false"
   default_relay_state            = ""
@@ -19,10 +19,37 @@ resource "okta_app_saml" "ClaimSearch" {
   signature_algorithm            = "RSA_SHA256"
   sso_url                        = "https://${var.url}/sso/saml2/0oa1v0yx8s8YqMHqG0h8"
   status                         = "ACTIVE"
-  subject_name_id_format         = "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+  subject_name_id_format         = "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
   subject_name_id_template       = "$${user.userName}"
-  user_name_template             = "$${source.samAccountName}"
+  user_name_template             = "$${source.userName}"
   user_name_template_type        = "BUILT_IN"
+
+  attribute_statements {
+    type         = "EXPRESSION"
+    name         = "lastName"
+    values       = "user.lastName"
+  }
+
+  attribute_statements {
+    type         = "EXPRESSION"
+    name         = "firstName"
+    values       = "user.firstName"
+  }
+
+  attribute_statements {
+    type         = "EXPRESSION"
+    name         = "email"
+    values       = "user.email"
+  }
+
+  attribute_statements {
+    type         = "EXPRESSION"
+    name         = "custCode"
+    filter_type  = "REGEX"
+    filter_value = ".*custCode.*"
+  }
+
+
 }
 
 # Create Claim Search Group
