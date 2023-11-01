@@ -27,19 +27,19 @@ resource "okta_app_saml" "ClaimSearch" {
   attribute_statements {
     type         = "EXPRESSION"
     name         = "lastName"
-    values       = "user.lastName"
+    values       = ["user.lastName"]
   }
 
   attribute_statements {
     type         = "EXPRESSION"
     name         = "firstName"
-    values       = "user.firstName"
+    values       = ["user.firstName"]
   }
 
   attribute_statements {
     type         = "EXPRESSION"
     name         = "email"
-    values       = "user.email"
+    values       = ["user.email"]
   }
 
   attribute_statements {
