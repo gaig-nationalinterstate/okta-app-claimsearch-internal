@@ -47,7 +47,7 @@ resource "okta_app_saml" "ClaimSearch" {
     #name         = "custCode"
     #filter_type  = "REGEX"
     #filter_value = ".*custCode.*"
-  }
+  #}
 
 
 }
