@@ -19,10 +19,10 @@ resource "okta_app_saml" "ClaimSearch" {
   signature_algorithm            = "RSA_SHA256"
   sso_url                        = "https://${var.url}/sso/saml2/0oa1v0yx8s8YqMHqG0h8"
   status                         = "ACTIVE"
-  subject_name_id_format         = "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-  subject_name_id_template       = "$${user.userName}"
-  user_name_template             = "$${source.userName}"
-  user_name_template_type        = "BUILT_IN"
+  #subject_name_id_format         = "urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+  #subject_name_id_template       = "$${user.userName}"
+  #user_name_template             = "$${source.userName}"
+  #user_name_template_type        = "BUILT_IN"
 }
 
 # Create Claim Search Group
