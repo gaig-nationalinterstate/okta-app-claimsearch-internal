@@ -42,11 +42,11 @@ resource "okta_app_saml" "ClaimSearch" {
     values       = ["user.email"]
   }
 
-  attribute_statements {
-    type         = "EXPRESSION"
-    name         = "custCode"
-    filter_type  = "REGEX"
-    filter_value = ".*custCode.*"
+  #attribute_statements {
+    #type         = "EXPRESSION"
+    #name         = "custCode"
+    #filter_type  = "REGEX"
+    #filter_value = ".*custCode.*"
   }
 
 
