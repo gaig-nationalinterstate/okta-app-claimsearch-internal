@@ -695,9 +695,9 @@ resource "okta_app_saml" "ClaimSearch-Underwriting" {
 }
 
 # Create Claim Search Groups
-resource "okta_group" "ClaimSearch_Admins" {
+resource "okta_group" "ClaimSearch_Admin" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_Admins"
+  name        = "ClaimSearch_Admin"
 }
 
 resource "okta_group" "ClaimSearch_Claims" {
