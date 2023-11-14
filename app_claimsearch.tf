@@ -710,9 +710,9 @@ resource "okta_group" "ClaimSearch-ClaimsAdjusters" {
   name        = "ClaimSearch-ClaimsAdjusters"
 }
 
-resource "okta_group" "ClaimSearch-ClaimsAdmins" {
+resource "okta_group" "ClaimSearch-ClaimsAdmin" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch-ClaimsAdmins"
+  name        = "ClaimSearch-ClaimsAdmin"
 }
 
 resource "okta_group" "ClaimSearch-Compliance" {
