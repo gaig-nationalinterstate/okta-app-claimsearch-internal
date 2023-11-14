@@ -780,55 +780,55 @@ resource "okta_app_group_assignment" "ClaimSearch-Underwriting" {
 resource "okta_group_rule" "ClaimSearch-Admin-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Admin\")"
   group_assignments = [okta_group.ClaimSearch-Admin.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch Admin group"
   status            = "ACTIVE"
 }
 
 resource "okta_group_rule" "ClaimSearch-Claims-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Claims\")"
   group_assignments = [okta_group.ClaimSearch-Claims.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch Claims group"
   status            = "ACTIVE"
 }
 
 resource "okta_group_rule" "ClaimSearch-ClaimsAdjusters-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ClaimsAdjusters\")"
   group_assignments = [okta_group.ClaimSearch-ClaimsAdjusters.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch ClaimsAdjusters group"
   status            = "ACTIVE"
 }
 
 resource "okta_group_rule" "ClaimSearch-ClaimsAdmin-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ClaimsAdmin\")"
   group_assignments = [okta_group.ClaimSearch-ClaimsAdmin.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch ClaimsAdmin group"
   status            = "ACTIVE"
 }
 
 resource "okta_group_rule" "ClaimSearch-Compliance-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Compliance\")"
   group_assignments = [okta_group.ClaimSearch-Compliance.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch Compliance group"
   status            = "ACTIVE"
 }
 
 resource "okta_group_rule" "ClaimSearch-ItAndIntOps-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ItAndIntOps\")"
   group_assignments = [okta_group.ClaimSearch-ItAndIntOps.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch ItAndIntOps group"
   status            = "ACTIVE"
 }
 
 resource "okta_group_rule" "ClaimSearch-SupervisorAndAbove-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_SupervisorAndAbove\")"
   group_assignments = [okta_group.ClaimSearch-SupervisorAndAbove.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch SupervisorAndAbove group"
   status            = "ACTIVE"
 }
 
 resource "okta_group_rule" "ClaimSearch-Underwriting-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Underwriting\")"
   group_assignments = [okta_group.ClaimSearch-Underwriting.id]
-  name              = "Add users to ClaimSearch group"
+  name              = "Add users to ClaimSearch Underwriting group"
   status            = "ACTIVE"
 }
