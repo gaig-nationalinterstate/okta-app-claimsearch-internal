@@ -777,56 +777,56 @@ resource "okta_app_group_assignment" "ClaimSearch-Underwriting" {
 }
 
 # Group Rules to add members of AD groups to Okta groups
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_Admin_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Admin\")"
   group_assignments = [okta_group.ClaimSearch_Admin.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_Claims_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Claims\")"
   group_assignments = [okta_group.ClaimSearch_Claims.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_ClaimsAdjusters_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ClaimsAdjusters\")"
   group_assignments = [okta_group.ClaimSearch_ClaimsAdjusters.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_ClaimsAdmin_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ClaimsAdmin\")"
   group_assignments = [okta_group.ClaimSearch_ClaimsAdmin.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_Compliance_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Compliance\")"
   group_assignments = [okta_group.ClaimSearch_Compliance.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_ItAndIntOps_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ItAndIntOps\")"
   group_assignments = [okta_group.ClaimSearch_ItAndIntOps.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_SupervisorAndAbove_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_SupervisorAndAbove\")"
   group_assignments = [okta_group.ClaimSearch_SupervisorAndAbove.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Rule" {
+resource "okta_group_rule" "ClaimSearch_Underwriting_Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Underwriting\")"
   group_assignments = [okta_group.ClaimSearch_Underwriting.id]
   name              = "Add users to ClaimSearch group"
