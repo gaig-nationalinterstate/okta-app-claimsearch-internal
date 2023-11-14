@@ -102,7 +102,7 @@ resource "okta_app_saml" "ClaimSearch-Claims" {
     name      = "custCode"
     namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
     type      = "EXPRESSION"
-    values    = ["N09000001"]
+    values    = ["V50100001"]
   }
 
   attribute_statements {
@@ -276,7 +276,7 @@ resource "okta_app_saml" "ClaimSearch-ClaimsAdmin" {
     name      = "custCode"
     namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
     type      = "EXPRESSION"
-    values    = ["N09000001"]
+    values    = ["V50100001"]
   }
 
   attribute_statements {
@@ -363,7 +363,7 @@ resource "okta_app_saml" "ClaimSearch-Compliance" {
     name      = "custCode"
     namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
     type      = "EXPRESSION"
-    values    = ["N09000001"]
+    values    = ["V50100001"]
   }
 
   attribute_statements {
@@ -624,7 +624,7 @@ resource "okta_app_saml" "ClaimSearch-Underwriting" {
     name      = "custCode"
     namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
     type      = "EXPRESSION"
-    values    = ["N09000001"]
+    values    = ["V50100001"]
   }
 
   attribute_statements {
@@ -695,44 +695,44 @@ resource "okta_app_saml" "ClaimSearch-Underwriting" {
 }
 
 # Create Claim Search Groups
-resource "okta_group" "ClaimSearch_Admin" {
+resource "okta_group" "ClaimSearch-Admin" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_Admin"
+  name        = "ClaimSearch-Admin"
 }
 
-resource "okta_group" "ClaimSearch_Claims" {
+resource "okta_group" "ClaimSearch-Claims" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_Claims"
+  name        = "ClaimSearch-Claims"
 }
 
-resource "okta_group" "ClaimSearch_ClaimsAdjusters" {
+resource "okta_group" "ClaimSearch-ClaimsAdjusters" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_ClaimsAdjusters"
+  name        = "ClaimSearch-ClaimsAdjusters"
 }
 
-resource "okta_group" "ClaimSearch_ClaimsAdmins" {
+resource "okta_group" "ClaimSearch-ClaimsAdmins" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_ClaimsAdmins"
+  name        = "ClaimSearch-ClaimsAdmins"
 }
 
-resource "okta_group" "ClaimSearch_Compliance" {
+resource "okta_group" "ClaimSearch-Compliance" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_Compliance"
+  name        = "ClaimSearch-Compliance"
 }
 
-resource "okta_group" "ClaimSearch_ItAndIntOps" {
+resource "okta_group" "ClaimSearch-ItAndIntOps" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_ItAndIntOps"
+  name        = "ClaimSearch-ItAndIntOps"
 }
 
-resource "okta_group" "ClaimSearch_SupervisorAndAbove" {
+resource "okta_group" "ClaimSearch-SupervisorAndAbove" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_SupervisorAndAbove"
+  name        = "ClaimSearch-SupervisorAndAbove"
 }
 
-resource "okta_group" "ClaimSearch_Underwriting" {
+resource "okta_group" "ClaimSearch-Underwriting" {
   description = "ClaimSearch Users for Verisk Single Sign-On"
-  name        = "ClaimSearch_Underwriting"
+  name        = "ClaimSearch-Underwriting"
 }
 
 # Group Assignment - Assign ClaimSearch groups to ClaimSearch Apps
@@ -777,58 +777,58 @@ resource "okta_app_group_assignment" "ClaimSearch-Underwriting" {
 }
 
 # Group Rules to add members of AD groups to Okta groups
-resource "okta_group_rule" "ClaimSearch_Admin_Rule" {
+resource "okta_group_rule" "ClaimSearch-Admin-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Admin\")"
-  group_assignments = [okta_group.ClaimSearch_Admin.id]
+  group_assignments = [okta_group.ClaimSearch-Admin.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Claims_Rule" {
+resource "okta_group_rule" "ClaimSearch-Claims-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Claims\")"
-  group_assignments = [okta_group.ClaimSearch_Claims.id]
+  group_assignments = [okta_group.ClaimSearch-Claims.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_ClaimsAdjusters_Rule" {
+resource "okta_group_rule" "ClaimSearch-ClaimsAdjusters-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ClaimsAdjusters\")"
-  group_assignments = [okta_group.ClaimSearch_ClaimsAdjusters.id]
+  group_assignments = [okta_group.ClaimSearch-ClaimsAdjusters.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_ClaimsAdmin_Rule" {
+resource "okta_group_rule" "ClaimSearch-ClaimsAdmin-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ClaimsAdmin\")"
-  group_assignments = [okta_group.ClaimSearch_ClaimsAdmin.id]
+  group_assignments = [okta_group.ClaimSearch-ClaimsAdmin.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Compliance_Rule" {
+resource "okta_group_rule" "ClaimSearch-Compliance-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Compliance\")"
-  group_assignments = [okta_group.ClaimSearch_Compliance.id]
+  group_assignments = [okta_group.ClaimSearch-Compliance.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_ItAndIntOps_Rule" {
+resource "okta_group_rule" "ClaimSearch-ItAndIntOps-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_ItAndIntOps\")"
-  group_assignments = [okta_group.ClaimSearch_ItAndIntOps.id]
+  group_assignments = [okta_group.ClaimSearch-ItAndIntOps.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_SupervisorAndAbove_Rule" {
+resource "okta_group_rule" "ClaimSearch-SupervisorAndAbove-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_SupervisorAndAbove\")"
-  group_assignments = [okta_group.ClaimSearch_SupervisorAndAbove.id]
+  group_assignments = [okta_group.ClaimSearch-SupervisorAndAbove.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
 
-resource "okta_group_rule" "ClaimSearch_Underwriting_Rule" {
+resource "okta_group_rule" "ClaimSearch-Underwriting-Rule" {
   expression_value  = "isMemberOfGroupNameContains(\"Okta_ClaimSearch_Underwriting\")"
-  group_assignments = [okta_group.ClaimSearch_Underwriting.id]
+  group_assignments = [okta_group.ClaimSearch-Underwriting.id]
   name              = "Add users to ClaimSearch group"
   status            = "ACTIVE"
 }
