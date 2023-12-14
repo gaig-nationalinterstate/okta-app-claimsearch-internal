@@ -125,56 +125,56 @@ resource "okta_group" "ClaimSearch-Underwriting" {
 }
 
 # Group Assignment - Assign ClaimSearch groups to ClaimSearch Apps
-resource "okta_app_group_assignment" "okta-claimsearch-admin" {
+resource "okta_app_group_assignment" "ClaimSearch-Admin" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-Admin.id
   priority = "0"
   profile  = "{\"accessGroup\":\"Admin\",\"custCode\":\"N09000001\"}"
 }
 
-resource "okta_app_group_assignment" "okta-claimsearch-claims" {
+resource "okta_app_group_assignment" "ClaimSearch-Claims" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-Claims.id
   priority = "6"
   profile  = "{\"accessGroup\":\"CLAIMS\",\"custCode\":\"V50100001\"}"
 }
 
-resource "okta_app_group_assignment" "okta-claimsearch-claimsadjusters" {
+resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdjusters" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-ClaimsAdjusters.id
   priority = "1"
   profile  = "{\"accessGroup\":\"CLAIMS ADJUSTERS\",\"custCode\":\"N09000001\"}"
 }
 
-resource "okta_app_group_assignment" "okta-claimsearch-claimsadmin" {
+resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdmin" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-ClaimsAdmin.id
   priority = "2"
   profile  = "{\"accessGroup\":\"CLAIMS ADMIN\",\"custCode\":\"N09000001\"}"
 }
 
-resource "okta_app_group_assignment" "okta-claimsearch-compliance" {
+resource "okta_app_group_assignment" "ClaimSearch-Compliance" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-Compliance.id
   priority = "3"
   profile  = "{\"accessGroup\":\"COMPLIANCE\",\"custCode\":\"N09000001\"}"
 }
 
-resource "okta_app_group_assignment" "okta-claimsearch-itandintops" {
+resource "okta_app_group_assignment" "ClaimSearch-ItAndIntOps" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-ItAndIntOps.id
   priority = "4"
   profile  = "{\"accessGroup\":\"IT AND INTERNAL OPERATIONS\",\"custCode\":\"N09000001\"}"
 }
 
-resource "okta_app_group_assignment" "okta-claimsearch-supervisorandabove" {
+resource "okta_app_group_assignment" "ClaimSearch-SupervisorAndAbove" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-SupervisorAndAbove.id
   priority = "5"
   profile  = "{\"accessGroup\":\"SUPERVISOR AND ABOVE\",\"custCode\":\"N09000001\"}"
 }
 
-resource "okta_app_group_assignment" "okta-claimsearch-underwriting" {
+resource "okta_app_group_assignment" "ClaimSearch-Underwriting" {
   app_id   = okta_app_saml.natl-claimsearch.id
   group_id = okta_group.ClaimSearch-Underwriting.id
   priority = "7"
