@@ -127,14 +127,14 @@ resource "okta_group" "ClaimSearch-Underwriting" {
 # Group Assignment - Assign ClaimSearch groups to ClaimSearch Apps
 resource "okta_app_group_assignment" "okta-claimsearch-admin" {
   app_id   = okta_app_saml.natl-claimsearch.id
-  group_id = okta_group.claimSearch-Admin.id
+  group_id = okta_group.ClaimSearch-Admin.id
   priority = "0"
   profile  = "{\"accessGroup\":\"Admin\",\"custCode\":\"N09000001\"}"
 }
 
 resource "okta_app_group_assignment" "okta-claimsearch-claims" {
   app_id   = okta_app_saml.natl-claimsearch.id
-  group_id = okta_group.okta-claimSearch-Claims.id
+  group_id = okta_group.ClaimSearch-Claims.id
   priority = "6"
   profile  = "{\"accessGroup\":\"CLAIMS\",\"custCode\":\"V50100001\"}"
 }
@@ -162,7 +162,7 @@ resource "okta_app_group_assignment" "okta-claimsearch-compliance" {
 
 resource "okta_app_group_assignment" "okta-claimsearch-itandintops" {
   app_id   = okta_app_saml.natl-claimsearch.id
-  group_id = okta_group.ClaimSearch-ItandIntOps.id
+  group_id = okta_group.ClaimSearch-ItAndIntOps.id
   priority = "4"
   profile  = "{\"accessGroup\":\"IT AND INTERNAL OPERATIONS\",\"custCode\":\"N09000001\"}"
 }
