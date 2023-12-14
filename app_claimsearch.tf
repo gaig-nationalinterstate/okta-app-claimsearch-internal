@@ -128,7 +128,7 @@ resource "okta_group" "ClaimSearch-Underwriting" {
 resource "okta_app_user_schema_property" "custCode" {
   app_id      = okta_app_saml.natl-claimsearch.id
   index       = "custCode"
-  title       = "cutsCode"
+  title       = "custCode"
   type        = "string"
   description = "My custom property name"
   master      = "OKTA"
@@ -159,6 +159,11 @@ resource "okta_app_group_assignment" "ClaimSearch-Admin" {
   group_id = okta_group.ClaimSearch-Admin.id
   priority = "0"
   profile  = "{\"accessGroup\":\"Admin\",\"custCode\":\"N09000001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 resource "okta_app_group_assignment" "ClaimSearch-Claims" {
@@ -166,6 +171,11 @@ resource "okta_app_group_assignment" "ClaimSearch-Claims" {
   group_id = okta_group.ClaimSearch-Claims.id
   priority = "6"
   profile  = "{\"accessGroup\":\"CLAIMS\",\"custCode\":\"V50100001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdjusters" {
@@ -173,6 +183,11 @@ resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdjusters" {
   group_id = okta_group.ClaimSearch-ClaimsAdjusters.id
   priority = "1"
   profile  = "{\"accessGroup\":\"CLAIMS ADJUSTERS\",\"custCode\":\"N09000001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdmin" {
@@ -180,6 +195,11 @@ resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdmin" {
   group_id = okta_group.ClaimSearch-ClaimsAdmin.id
   priority = "2"
   profile  = "{\"accessGroup\":\"CLAIMS ADMIN\",\"custCode\":\"N09000001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 resource "okta_app_group_assignment" "ClaimSearch-Compliance" {
@@ -187,6 +207,11 @@ resource "okta_app_group_assignment" "ClaimSearch-Compliance" {
   group_id = okta_group.ClaimSearch-Compliance.id
   priority = "3"
   profile  = "{\"accessGroup\":\"COMPLIANCE\",\"custCode\":\"N09000001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 resource "okta_app_group_assignment" "ClaimSearch-ItAndIntOps" {
@@ -194,6 +219,11 @@ resource "okta_app_group_assignment" "ClaimSearch-ItAndIntOps" {
   group_id = okta_group.ClaimSearch-ItAndIntOps.id
   priority = "4"
   profile  = "{\"accessGroup\":\"IT AND INTERNAL OPERATIONS\",\"custCode\":\"N09000001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 resource "okta_app_group_assignment" "ClaimSearch-SupervisorAndAbove" {
@@ -201,6 +231,11 @@ resource "okta_app_group_assignment" "ClaimSearch-SupervisorAndAbove" {
   group_id = okta_group.ClaimSearch-SupervisorAndAbove.id
   priority = "5"
   profile  = "{\"accessGroup\":\"SUPERVISOR AND ABOVE\",\"custCode\":\"N09000001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 resource "okta_app_group_assignment" "ClaimSearch-Underwriting" {
@@ -208,6 +243,11 @@ resource "okta_app_group_assignment" "ClaimSearch-Underwriting" {
   group_id = okta_group.ClaimSearch-Underwriting.id
   priority = "7"
   profile  = "{\"accessGroup\":\"UNDERWRITING\",\"custCode\":\"V50100001\"}"
+
+  depends_on = [
+    okta_app_user_schema_property.custCode,
+    okta_app_user_schema_property.accessGroup
+  ]
 }
 
 # Group Rules to add members of AD groups to Okta groups
