@@ -135,7 +135,7 @@ resource "okta_app_user_schema_property" "custCode" {
   scope       = "NONE"
 
   depends_on = [
-    okta_app_saml.natl-claimsearch.id
+    okta_app_saml.natl-claimsearch
   ]
 }
 
@@ -149,7 +149,7 @@ resource "okta_app_user_schema_property" "accessGroup" {
   scope       = "NONE"
 
   depends_on = [
-    okta_app_saml.natl-claimsearch.id
+    okta_app_saml.natl-claimsearch
   ]
 }
 
