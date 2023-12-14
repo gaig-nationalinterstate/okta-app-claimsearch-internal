@@ -124,6 +124,35 @@ resource "okta_group" "ClaimSearch-Underwriting" {
   name        = "ClaimSearch-Underwriting"
 }
 
+# User Schema Property - Profile Attributes for ClaimSearch
+resource "okta_app_user_schema_property" "custCode" {
+  app_id      = okta_app_saml.natl-claimsearch.id
+  index       = "custCode"
+  title       = "cutsCode"
+  type        = "string"
+  description = "My custom property name"
+  master      = "OKTA"
+  scope       = "NONE"
+
+  depends_on = [
+    okta_app_saml.natl-claimsearch.id
+  ]
+}
+
+resource "okta_app_user_schema_property" "accessGroup" {
+  app_id      = okta_app_saml.natl-claimsearch.id
+  index       = "accessGroup"
+  title       = "accessGroup"
+  type        = "string"
+  description = "Access Group"
+  master      = "OKTA"
+  scope       = "NONE"
+
+  depends_on = [
+    okta_app_saml.natl-claimsearch.id
+  ]
+}
+
 # Group Assignment - Assign ClaimSearch groups to ClaimSearch Apps
 resource "okta_app_group_assignment" "ClaimSearch-Admin" {
   app_id   = okta_app_saml.natl-claimsearch.id
