@@ -161,7 +161,7 @@ resource "okta_app_group_assignment" "ClaimSearch-Admin" {
   profile  = "{\"accessGroup\":\"Admin\",\"custCode\":\"N09000001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
@@ -173,7 +173,7 @@ resource "okta_app_group_assignment" "ClaimSearch-Claims" {
   profile  = "{\"accessGroup\":\"CLAIMS\",\"custCode\":\"V50100001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
@@ -185,7 +185,7 @@ resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdjusters" {
   profile  = "{\"accessGroup\":\"CLAIMS ADJUSTERS\",\"custCode\":\"N09000001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
@@ -197,7 +197,7 @@ resource "okta_app_group_assignment" "ClaimSearch-ClaimsAdmin" {
   profile  = "{\"accessGroup\":\"CLAIMS ADMIN\",\"custCode\":\"N09000001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
@@ -209,7 +209,7 @@ resource "okta_app_group_assignment" "ClaimSearch-Compliance" {
   profile  = "{\"accessGroup\":\"COMPLIANCE\",\"custCode\":\"N09000001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
@@ -221,7 +221,7 @@ resource "okta_app_group_assignment" "ClaimSearch-ItAndIntOps" {
   profile  = "{\"accessGroup\":\"IT AND INTERNAL OPERATIONS\",\"custCode\":\"N09000001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
@@ -233,7 +233,7 @@ resource "okta_app_group_assignment" "ClaimSearch-SupervisorAndAbove" {
   profile  = "{\"accessGroup\":\"SUPERVISOR AND ABOVE\",\"custCode\":\"N09000001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
@@ -245,7 +245,7 @@ resource "okta_app_group_assignment" "ClaimSearch-Underwriting" {
   profile  = "{\"accessGroup\":\"UNDERWRITING\",\"custCode\":\"V50100001\"}"
 
   depends_on = [
-    okta_app_user_schema_property.custCode
+    okta_app_user_schema_property.custCode,
     okta_app_user_schema_property.accessGroup
   ]
 }
